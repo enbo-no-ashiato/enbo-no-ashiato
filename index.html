@@ -1,12 +1,167 @@
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <title>遠望の足跡</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>遠望の足跡</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
+      line-height: 1.7;
+      color: #222;
+      background: #f8f8f6;
+    }
+
+    header {
+      padding: 80px 20px 60px;
+      text-align: center;
+      background: #ffffff;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.4rem;
+      letter-spacing: 0.08em;
+    }
+
+    header p {
+      margin-top: 16px;
+      font-size: 1rem;
+      color: #666;
+    }
+
+    nav {
+      background: #f0efe9;
+      border-top: 1px solid #e3e0d7;
+      border-bottom: 1px solid #e3e0d7;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 14px 20px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #333;
+      font-size: 0.95rem;
+    }
+
+    nav a:hover {
+      opacity: 0.7;
+    }
+
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 50px 20px 80px;
+    }
+
+    section {
+      background: #fff;
+      padding: 28px;
+      margin-bottom: 24px;
+      border-radius: 16px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+    }
+
+    h2 {
+      margin-top: 0;
+      font-size: 1.3rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      padding: 18px;
+      border: 1px solid #ece8df;
+      border-radius: 14px;
+      background: #fcfcfa;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      font-size: 1.05rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 24px 20px 40px;
+      color: #777;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
-<body style="font-family: sans-serif; text-align: center; margin-top: 100px;">
+<body>
+  <header>
     <h1>遠望の足跡</h1>
-    <p>ここにあなたの世界が広がります。</p>
+    <p>旅、写真、記録。遠くを見つめながら残していく、小さな足跡。</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Gallery</a></li>
+      <li><a href="#">YouTube</a></li>
+      <li><a href="#">Blog</a></li>
+      <li><a href="#">裸足の軌跡</a></li>
+      <li><a href="#">喫茶 方舟</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section>
+      <h2>このサイトについて</h2>
+      <p>
+        「遠望の足跡」は、旅の記録、写真、動画、そして日々の感性を静かに積み重ねていく個人サイトです。
+        遠くの景色に惹かれながら、自分の歩いてきた道もまた残していきたい。
+        そんな思いを、この場所に少しずつまとめていきます。
+      </p>
+    </section>
+
+    <section>
+      <h2>Contents</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Gallery</h3>
+          <p>旅先や日常で撮影した写真をまとめる場所。</p>
+        </div>
+        <div class="card">
+          <h3>YouTube</h3>
+          <p>Vlogや映像作品を掲載するページ。</p>
+        </div>
+        <div class="card">
+          <h3>Blog</h3>
+          <p>旅の記録、日々のこと、考えごとを書き残す場所。</p>
+        </div>
+        <div class="card">
+          <h3>裸足の軌跡</h3>
+          <p>踏みしめた感覚を記録として残すシリーズ。</p>
+        </div>
+        <div class="card">
+          <h3>喫茶 方舟</h3>
+          <p>静かな時間とコーヒーの物語を置く場所。</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 遠望の足跡</p>
+  </footer>
 </body>
 </html>
