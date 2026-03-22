@@ -6,133 +6,112 @@
   <title>遠望の足跡</title>
   <link rel="icon" href="images/favicon.png">
   <link rel="apple-touch-icon" href="images/favicon.png" />
- <style>
-  * {
-    box-sizing: border-box;
-  }
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-  html {
-    scroll-behavior: smooth;
-  }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
+      line-height: 1.7;
+      color: #222;
+      background: #f8f8f6;
+    }
 
-  body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
-    line-height: 1.7;
-    color: #222;
-    background: #f8f8f6;
-  }
+    header {
+      padding: 80px 20px 60px;
+      text-align: center;
+      background: #ffffff;
+    }
 
-  .hero {
-    height: 100vh;
-    min-height: 680px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 40px 20px;
-    color: white;
-    background: #000;
-  }
+    header h1 {
+      margin: 0;
+      font-size: 2.4rem;
+      letter-spacing: 0.08em;
+    }
 
-  .hero-overlay {
-    max-width: 900px;
-  }
+    header p {
+      margin-top: 16px;
+      font-size: 1rem;
+      color: #666;
+    }
 
-  .hero-logo {
-    max-width: 600px;
-    width: 100%;
-    height: auto;
-    margin-bottom: 20px;
-    filter: drop-shadow(0 0 18px rgba(255, 255, 255, 0.22));
-  }
+    nav {
+      background: #f0efe9;
+      border-top: 1px solid #e3e0d7;
+      border-bottom: 1px solid #e3e0d7;
+    }
 
-  .hero p {
-    margin-top: 10px;
-    font-size: 1rem;
-    color: rgba(255, 255, 255, 0.82);
-  }
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 14px 20px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
 
-  nav {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(6px);
+    nav a {
+      text-decoration: none;
+      color: #333;
+      font-size: 0.95rem;
+    }
 
-  }
+    nav a:hover {
+      opacity: 0.7;
+    }
 
-  nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 14px 20px;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 18px;
-  }
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 50px 20px 80px;
+    }
 
-  nav a {
-    text-decoration: none;
-    color: #333;
-    font-size: 0.95rem;
-  }
+    section {
+      background: #fff;
+      padding: 28px;
+      margin-bottom: 24px;
+      border-radius: 16px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+    }
 
-  nav a:hover {
-    opacity: 0.7;
-  }
+    h2 {
+      margin-top: 0;
+      font-size: 1.3rem;
+    }
 
-  main {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 50px 20px 80px;
-  }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
 
-  section {
-    background: #fff;
-    padding: 28px;
-    margin-bottom: 24px;
-    border-radius: 16px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
-  }
+    .card {
+      padding: 18px;
+      border: 1px solid #ece8df;
+      border-radius: 14px;
+      background: #fcfcfa;
+    }
 
-  h2 {
-    margin-top: 0;
-    font-size: 1.3rem;
-  }
+    .card h3 {
+      margin-top: 0;
+      font-size: 1.05rem;
+    }
 
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 16px;
-  }
-
-  .card {
-    padding: 18px;
-    border: 1px solid #ece8df;
-    border-radius: 14px;
-    background: #fcfcfa;
-  }
-
-  .card h3 {
-    margin-top: 0;
-    font-size: 1.05rem;
-  }
-
-  footer {
-    text-align: center;
-    padding: 24px 20px 40px;
-    color: #777;
-    font-size: 0.9rem;
-  }
-</style>
+    footer {
+      text-align: center;
+      padding: 24px 20px 40px;
+      color: #777;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 <body>
-  <header class="hero">
-    <div class="hero-overlay">
-      <img src="images/logo.png" alt="遠望の足跡ロゴ" class="hero-logo">
-      <p>旅、写真、記録。遠くを見つめながら残していく、小さな足跡。</p>
-    </div>
+  <header>
+    <img src="images/logo.png" alt="遠望の足跡ロゴ" style="max-width: 600px; width: 100%; height: auto;">
+    <p>旅、写真、記録。遠くを見つめながら残していく、小さな足跡。</p>
   </header>
 
   <nav>
