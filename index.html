@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="旅、写真、記録。遠くを見つめながら残していく、小さな足跡。">
+  <title>遠望の足跡｜旅、写真、記録。</title>
+  <style>
+    :root{--cream:#eee5cf;--paper:#f8f1df;--indigo:#1f3551;--ink:#26323b;--persimmon:#b75b3c;--sage:#7d8b72;--line:rgba(31,53,81,.3)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:"Yu Mincho","Hiragino Mincho ProN","Noto Serif JP",serif;background-image:linear-gradient(90deg,rgba(31,53,81,.02) 1px,transparent 1px);background-size:7px 100%}a{color:inherit;text-decoration:none}
+    .mast{height:82px;border-bottom:1px solid var(--line);display:grid;grid-template-columns:220px 1fr 260px;align-items:center;padding:0 4.2vw;letter-spacing:.1em}.mark{display:flex;align-items:center}.mark img{display:block;width:min(190px,100%);height:52px;object-fit:contain;object-position:left center}.nav{justify-self:center;display:flex;gap:42px;font:11px Arial,sans-serif;letter-spacing:.24em;text-transform:uppercase}.nav a{position:relative}.nav a:after{content:"";position:absolute;left:0;right:100%;bottom:-8px;height:2px;background:var(--persimmon);transition:.3s}.nav a:hover:after,.nav a:focus-visible:after{right:0}.issue{justify-self:end;margin:0;display:flex;align-items:center;gap:12px;font-size:11px}.issue b{font:400 28px Georgia,serif;color:var(--indigo)}
+    .hero{min-height:690px;position:relative;display:grid;grid-template-columns:40% 60%;padding:58px 4.2vw 48px;overflow:hidden}.hero:before{content:"";position:absolute;left:42%;top:0;bottom:0;border-left:1px solid var(--line)}.copy{position:relative;z-index:2;padding:30px 0 0 4vw}.eyebrow{margin:0 0 26px;color:var(--persimmon);font:11px Arial,sans-serif;letter-spacing:.34em;text-transform:uppercase}.hero h1{margin:0;height:370px;writing-mode:vertical-rl;color:var(--indigo);font-size:clamp(64px,7.4vw,118px);font-weight:500;line-height:.88;letter-spacing:-.08em}.reading{position:absolute;top:390px;left:clamp(160px,16vw,300px);margin:0;color:var(--indigo);font-size:11px;letter-spacing:.32em;writing-mode:vertical-rl}.tagline{width:290px;margin:30px 0 0;font-size:13px;line-height:2.1;letter-spacing:.08em}
+    .visual{position:relative;min-height:540px;padding-left:4vw}.photo{position:absolute;background-position:center;background-size:cover;filter:sepia(.22) saturate(.72) contrast(.92)}.photo:after,.work-image:after,.film-frame:after{content:"";position:absolute;inset:0;background:linear-gradient(145deg,transparent 46%,rgba(31,53,81,.13)),linear-gradient(rgba(238,229,207,.03),rgba(31,53,81,.1));pointer-events:none}.photo-main{left:4vw;top:0;width:72%;height:450px;background-image:url("https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1800&q=90")}.photo-small{right:0;bottom:18px;width:36%;height:250px;border:10px solid var(--paper);transform:rotate(2deg);background-image:url("https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1000&q=88")}.caption{position:absolute;left:4vw;top:465px;margin:0;font-size:10px;letter-spacing:.12em}.caption span{color:var(--persimmon);margin-right:12px}.leaf{position:absolute;width:110px;height:36px;border:1px solid var(--sage);border-radius:100% 0 100% 0;opacity:.72;transform:rotate(-23deg)}.leaf:after{content:"";position:absolute;width:150px;border-top:1px solid var(--sage);left:-25px;top:30px;transform:rotate(23deg)}.leaf.one{right:3%;top:5%}.leaf.two{left:36%;bottom:2%;transform:rotate(152deg) scale(.75)}.edition{position:absolute;right:2vw;top:155px;margin:0;writing-mode:vertical-rl;color:var(--persimmon);font:10px Arial,sans-serif;letter-spacing:.35em}
+    .works{background:var(--indigo);color:var(--cream);padding:62px 4.2vw 70px}.section-head{display:flex;align-items:flex-end;justify-content:space-between;padding-bottom:18px;border-bottom:1px solid rgba(238,229,207,.35)}.section-head p{margin:0 0 8px;color:#d18767;font:10px Arial,sans-serif;letter-spacing:.28em}.section-head h2{margin:0;font-size:32px;font-weight:400;letter-spacing:.12em}.section-head a{font:10px Arial,sans-serif;letter-spacing:.2em}.strip{display:grid;grid-template-columns:1.3fr .72fr 1fr;gap:18px;align-items:start;margin-top:32px}.work-image{min-height:220px;position:relative;overflow:hidden;border:8px solid #17283e;background-position:center;background-size:cover;box-shadow:0 0 0 1px rgba(238,229,207,.25);filter:saturate(.72) sepia(.15);transition:.3s}.card.tall .work-image{min-height:290px}.card:hover .work-image{filter:saturate(.9) sepia(.05);transform:translateY(-3px)}.work-image span{position:absolute;z-index:1;right:9px;top:8px;color:var(--paper);font:10px Georgia,serif}.meta{display:flex;justify-content:space-between;gap:16px;align-items:baseline;padding-top:13px}.meta h3{margin:0;font-size:14px;font-weight:400;letter-spacing:.08em}.meta em{color:#d18767;font:italic 11px Georgia,serif;white-space:nowrap}.card>p{margin:8px 0 0;color:rgba(238,229,207,.72);font-size:11px;line-height:1.8}.sample{margin:34px 0 0;color:rgba(238,229,207,.55);font-size:10px;letter-spacing:.08em;text-align:right}
+    .films{display:grid;grid-template-columns:.7fr 1.3fr;gap:8vw;padding:110px 8.2vw;border-bottom:1px solid var(--line)}.films h2,.about h2{margin:0;color:var(--indigo);font-size:clamp(34px,4vw,62px);line-height:1.45;font-weight:400;letter-spacing:.05em}.film-copy>p:not(.eyebrow){margin:28px 0;font-size:13px;line-height:2.2}.text-link{color:var(--persimmon);font-size:12px;letter-spacing:.12em}.film-frame{min-height:430px;position:relative;display:flex;align-items:center;justify-content:center;color:var(--paper);background:url("https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1600&q=88") center/cover;filter:saturate(.65) sepia(.2)}.play{z-index:1;display:grid;place-items:center;width:72px;height:72px;border:1px solid rgba(248,241,223,.8);border-radius:50%;font-size:20px;padding-left:4px}.film-frame p{position:absolute;z-index:1;left:22px;bottom:18px;margin:0;font:10px Arial,sans-serif;letter-spacing:.22em}
+    .about{display:grid;grid-template-columns:.45fr 1.55fr;gap:7vw;padding:110px 15vw 130px 8.2vw}.about-index{margin:12px 0 0;color:var(--persimmon);font:10px Arial,sans-serif;letter-spacing:.25em}.about div>p{max-width:760px;margin:34px 0 0;font-size:14px;line-height:2.4;letter-spacing:.05em}footer{display:flex;justify-content:space-between;align-items:center;padding:23px 4.2vw;background:var(--indigo);color:var(--cream);font:10px Arial,sans-serif;letter-spacing:.2em}footer p{margin:0}
+    @media(max-width:800px){.mast{height:68px;grid-template-columns:1fr auto;padding:0 20px}.nav{display:none}.issue span{display:none}.hero{display:block;min-height:auto;padding:28px 20px 42px}.hero:before,.edition{display:none}.copy{padding:0}.eyebrow{margin-top:20px}.hero h1{height:auto;writing-mode:horizontal-tb;font-size:clamp(54px,17vw,78px);line-height:1}.reading{position:static;margin-top:14px;writing-mode:horizontal-tb}.tagline{width:auto;margin-bottom:34px}.visual{height:480px;min-height:0;padding:0}.photo-main{left:0;width:84%;height:350px}.photo-small{width:42%;height:185px}.caption{left:0;top:368px;line-height:1.7}.strip{grid-template-columns:1fr;gap:34px}.work-image,.card.tall .work-image{min-height:230px}.works{padding:48px 20px}.section-head{align-items:flex-start;gap:30px}.section-head h2{font-size:25px}.sample{text-align:left;line-height:1.7}.films,.about{grid-template-columns:1fr;gap:45px;padding:80px 20px}.film-frame{min-height:270px}footer{gap:18px;flex-wrap:wrap;padding:20px}footer p:nth-child(2){display:none}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition-duration:.01ms!important}}
+  </style>
+</head>
+<body>
+  <div id="previewBadge" hidden style="position:sticky;top:0;z-index:99;padding:9px 16px;background:#b75b3c;color:#fff;text-align:center;font:12px Arial,sans-serif;letter-spacing:.14em">下書きプレビュー — 公開サイトにはまだ反映されていません</div>
+  <header class="mast"><a class="mark" href="./" aria-label="遠望の足跡 ホームへ戻る"><img id="siteLogo" src="media/logo.png" alt="遠望の足跡"></a><nav class="nav"><a href="#gallery">Gallery</a><a href="#films">Films</a><a href="#about">About</a></nav><p class="issue"><span>旅と記憶の個人誌</span><b>02</b></p></header>
+  <main>
+    <section class="hero" id="top"><div class="copy"><p class="eyebrow">A quiet travel journal</p><h1 id="heroTitle">遠望の足跡</h1><p class="reading" id="heroReading">えんぼうのあしあと</p><p class="tagline" id="heroTagline">旅、写真、記録。<br>遠くを見つめながら残していく、<br>小さな足跡。</p></div><div class="visual"><div class="photo photo-main" id="heroMain"></div><div class="photo photo-small" id="heroSmall"></div><p class="caption"><span>特集</span><b id="featureCaption" style="font-weight:400">光の気配をたどる、夏の途上にて。</b></p><i class="leaf one"></i><i class="leaf two"></i></div><p class="edition">PHOTOGRAPHY &amp; FILM — 2026</p></section>
+    <section class="works" id="gallery"><div class="section-head"><div><p>SELECTED JOURNEYS</p><h2>採集した風景</h2></div><a href="#films">映像の記録を見る →</a></div><div class="strip" id="worksList">
+      <article class="card"><div class="work-image" style="background-image:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=88')"><span>01</span></div><div class="meta"><h3>裸足の軌跡</h3><em>photography</em></div><p>土の温度、草の感触。旅先で足もとに残った記憶。</p></article>
+      <article class="card tall"><div class="work-image" style="background-image:url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1200&q=88')"><span>02</span></div><div class="meta"><h3>喫茶 方舟</h3><em>short film</em></div><p>静かな時間と、湯気の向こうにある小さな物語。</p></article>
+      <article class="card"><div class="work-image" style="background-image:url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1400&q=88')"><span>03</span></div><div class="meta"><h3>遠景、雨のあと</h3><em>photography</em></div><p>雨上がりの道で見つけた、淡い光の記録。</p></article>
+    </div><p class="sample">掲載写真はデザイン確認用のサンプルです。あなたの作品に差し替えて完成させられます。</p></section>
+    <section class="films" id="films"><div class="film-copy"><p class="eyebrow">Moving images</p><h2 id="filmTitle">映像に残る、<br>旅の呼吸。</h2><p id="filmBody">風の音、足音、窓に流れる景色。写真の前後にある時間を、短い映像として残します。</p><a class="text-link" id="filmLink" href="#">YouTubeへ続く場所 ↗</a></div><div class="film-frame" id="filmFrame"><span class="play">▶</span><p id="filmLabel">SHORT FILM / 喫茶 方舟</p></div></section>
+    <section class="about" id="about"><p class="about-index">ABOUT / 05</p><div><h2 id="aboutTitle">遠くの景色と、<br>歩いてきた道。</h2><p id="aboutBody">「遠望の足跡」は、旅の記録、写真、動画、そして日々の感性を静かに積み重ねていく個人サイトです。遠くの景色に惹かれながら、自分の歩いてきた道もまた残していきたい。そんな思いを、この場所に少しずつまとめていきます。</p></div></section>
+  </main>
+  <footer><p>© 遠望の足跡</p><p id="footerTagline">記録は、また次の旅へ。</p><a href="#top">PAGE TOP ↑</a></footer>
+  <script>
+    const isPreview = new URLSearchParams(location.search).get("preview") === "1";
+    const contentFile = isPreview ? "content/draft.json" : "content/site.json";
+    const esc = value => String(value ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+    const linebreaks = value => esc(value).replace(/\n/g, "<br>");
+    const youtubeId = value => { try { const url = new URL(value); if(url.hostname.includes("youtu.be")) return url.pathname.slice(1).split("/")[0]; if(url.hostname.includes("youtube.com")) return url.searchParams.get("v") || url.pathname.split("/").filter(Boolean).pop(); } catch(_){} return ""; };
+    async function loadContent(){
+      if(isPreview) document.getElementById("previewBadge").hidden = false;
+      try{
+        const response = await fetch(contentFile + "?v=" + Date.now(), {cache:"no-store"});
+        if(!response.ok) throw new Error("content unavailable");
+        const data = await response.json();
+        document.title = `${data.title || "遠望の足跡"}｜旅、写真、記録。`;
+        document.getElementById("siteLogo").src = data.logo || "media/logo.png";
+        document.getElementById("heroTitle").textContent = data.title || "遠望の足跡";
+        document.getElementById("heroReading").textContent = data.reading || "";
+        document.getElementById("heroTagline").innerHTML = linebreaks(data.tagline);
+        document.getElementById("featureCaption").textContent = data.feature_caption || "";
+        if(data.hero_image) document.getElementById("heroMain").style.backgroundImage = `url("${data.hero_image}")`;
+        if(data.hero_sub_image) document.getElementById("heroSmall").style.backgroundImage = `url("${data.hero_sub_image}")`;
+        const works = Array.isArray(data.works) ? data.works : [];
+        document.getElementById("worksList").innerHTML = works.map((work,index) => {
+          const video = youtubeId(work.youtube_url); const link = video ? `https://www.youtube.com/watch?v=${encodeURIComponent(video)}` : "#";
+          return `<article class="card ${index%3===1?"tall":""}"><a href="${link}" ${video?'target="_blank" rel="noopener"':''}><div class="work-image" style="background-image:url('${esc(work.image)}')"><span>${String(index+1).padStart(2,"0")}</span></div><div class="meta"><h3>${esc(work.title)}</h3><em>${esc(work.type)}</em></div><p>${esc(work.note)}</p></a></article>`;
+        }).join("");
+        document.getElementById("filmTitle").innerHTML = linebreaks(data.film_title);
+        document.getElementById("filmBody").textContent = data.film_body || "";
+        document.getElementById("filmLabel").textContent = data.film_label || "SHORT FILM";
+        const film = youtubeId(data.film_youtube_url); const filmLink = document.getElementById("filmLink");
+        filmLink.href = film ? `https://www.youtube.com/watch?v=${encodeURIComponent(film)}` : "#";
+        if(film){filmLink.target="_blank";filmLink.rel="noopener"}
+        if(data.film_cover) document.getElementById("filmFrame").style.backgroundImage = `url("${data.film_cover}")`;
+        document.getElementById("aboutTitle").innerHTML = linebreaks(data.about_title);
+        document.getElementById("aboutBody").textContent = data.about_body || "";
+        document.getElementById("footerTagline").textContent = data.footer_tagline || "";
+      }catch(error){console.warn("既定の内容を表示します",error)}
+    }
+    loadContent();
+  </script>
+</body>
+</html>

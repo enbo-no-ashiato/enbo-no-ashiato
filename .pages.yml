@@ -1,0 +1,69 @@
+media:
+  input: media
+  output: media
+  rename: safe
+  extensions: [jpg, jpeg, png, webp, gif]
+
+settings:
+  content:
+    merge: true
+  commit:
+    identity: user
+    templates:
+      update: "下書きを更新: {path}"
+
+content:
+  - name: site-draft
+    label: サイトの編集・下書き
+    type: file
+    path: content/draft.json
+    format: json
+    operations:
+      delete: false
+    fields:
+      - { name: title, label: サイト名, type: string, required: true }
+      - { name: reading, label: サイト名の読み, type: string }
+      - { name: logo, label: 上部のロゴ, type: image, required: true }
+      - { name: tagline, label: トップの紹介文, type: text, required: true, description: 改行もそのまま反映されます }
+      - { name: feature_caption, label: 特集の短い文章, type: string }
+      - { name: hero_image, label: トップの大きな写真, type: image }
+      - { name: hero_sub_image, label: トップの小さな写真, type: image }
+      - name: works
+        label: 写真・映像作品
+        type: object
+        list:
+          min: 1
+          collapsible:
+            collapsed: true
+            summary: "{title} ({index})"
+        fields:
+          - { name: title, label: 作品名, type: string, required: true }
+          - name: type
+            label: 種類
+            type: select
+            options:
+              values:
+                - { name: photography, label: 写真 }
+                - { name: short film, label: 映像 }
+          - { name: note, label: 作品の説明, type: text }
+          - { name: image, label: 写真・サムネイル, type: image, required: true }
+          - { name: youtube_url, label: YouTube URL, type: string, description: 映像作品の場合に貼り付けます }
+      - { name: film_title, label: 映像欄の見出し, type: text }
+      - { name: film_body, label: 映像欄の説明, type: text }
+      - { name: film_label, label: 映像の表示名, type: string }
+      - { name: film_youtube_url, label: メインのYouTube URL, type: string }
+      - { name: film_cover, label: 映像欄の背景写真, type: image }
+      - { name: about_title, label: 紹介欄の見出し, type: text }
+      - { name: about_body, label: 紹介文, type: text }
+      - { name: footer_tagline, label: 一番下の短い文章, type: string }
+
+actions:
+  - name: publish-site
+    label: 下書きを公開する
+    workflow: publish-site.yml
+    ref: current
+    cancelable: false
+    confirm:
+      title: サイトを公開しますか？
+      message: プレビューを確認したあとに実行してください。現在のホームページが下書きの内容に更新されます。
+      button: 公開する
