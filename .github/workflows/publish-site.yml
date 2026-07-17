@@ -1,0 +1,33 @@
+name: Publish site content
+
+on:
+  workflow_dispatch:
+    inputs:
+      payload:
+        description: Pages CMS action payload
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Copy the approved draft to the live site
+        run: cp content/draft.json content/site.json
+      - name: Commit and publish
+        run: |
+          git config user.name "遠望の足跡 編集画面"
+          git config user.email "actions@users.noreply.github.com"
+          git add content/site.json
+          if git diff --cached --quiet; then
+            echo "公開内容に変更はありません"
+            exit 0
+          fi
+          git commit -m "サイトを公開"
+          git push
