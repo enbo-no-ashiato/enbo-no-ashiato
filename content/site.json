@@ -1,0 +1,22 @@
+{
+  "title": "遠望の足跡",
+  "reading": "えんぼうのあしあと",
+  "logo": "media/logo.png",
+  "tagline": "旅、写真、記録。\n遠くを見つめながら残していく、\n小さな足跡。",
+  "feature_caption": "光の気配をたどる、夏の途上にて。",
+  "hero_image": "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1800&q=90",
+  "hero_sub_image": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1000&q=88",
+  "works": [
+    {"title":"裸足の軌跡","type":"photography","note":"土の温度、草の感触。旅先で足もとに残った記憶。","image":"https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=88","youtube_url":""},
+    {"title":"喫茶 方舟","type":"short film","note":"静かな時間と、湯気の向こうにある小さな物語。","image":"https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1200&q=88","youtube_url":""},
+    {"title":"遠景、雨のあと","type":"photography","note":"雨上がりの道で見つけた、淡い光の記録。","image":"https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1400&q=88","youtube_url":""}
+  ],
+  "film_title": "映像に残る、\n旅の呼吸。",
+  "film_body": "風の音、足音、窓に流れる景色。写真の前後にある時間を、短い映像として残します。",
+  "film_label": "SHORT FILM / 喫茶 方舟",
+  "film_youtube_url": "",
+  "film_cover": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1600&q=88",
+  "about_title": "遠くの景色と、\n歩いてきた道。",
+  "about_body": "「遠望の足跡」は、旅の記録、写真、動画、そして日々の感性を静かに積み重ねていく個人サイトです。遠くの景色に惹かれながら、自分の歩いてきた道もまた残していきたい。そんな思いを、この場所に少しずつまとめていきます。",
+  "footer_tagline": "記録は、また次の旅へ。"
+}
