@@ -3,23 +3,19 @@ media:
   output: media
   rename: safe
   extensions: [jpg, jpeg, png, webp, gif]
-
 settings:
-  content:
-    merge: true
+  content: { merge: true }
   commit:
     identity: user
     templates:
       update: "下書きを更新: {path}"
-
 content:
   - name: site-draft
     label: サイトの編集・下書き
     type: file
     path: content/draft.json
     format: json
-    operations:
-      delete: false
+    operations: { delete: false }
     fields:
       - { name: title, label: サイト名, type: string, required: true }
       - { name: reading, label: サイト名の読み, type: string }
@@ -28,14 +24,76 @@ content:
       - { name: feature_caption, label: 特集の短い文章, type: string }
       - { name: hero_image, label: トップの大きな写真, type: image }
       - { name: hero_sub_image, label: トップの小さな写真, type: image }
+      - { name: home_photography_image, label: トップのPHOTOGRAPHY画像, type: image, description: GIFもアップロードできます }
+      - { name: home_movie_image, label: トップのMOVIE画像, type: image, description: GIFもアップロードできます }
+      - { name: home_log_image, label: トップのLOG画像, type: image, description: GIFもアップロードできます }
+      - { name: about_image, label: ABOUT共通写真, type: image, description: トップ下部とABOUTページの両方に表示します }
+      - name: photo_categories
+        label: 写真カテゴリ（上から1〜5）
+        type: object
+        list:
+          min: 5
+          max: 5
+          collapsible: { collapsed: true, summary: "{name}" }
+        fields:
+          - { name: name, label: カテゴリ名, type: string, required: true }
+          - { name: cover_image, label: カテゴリの表紙画像, type: image }
+      - name: photos
+        label: 写真作品
+        type: object
+        list:
+          collapsible: { collapsed: true, summary: "{title} ({date})" }
+        fields:
+          - { name: title, label: 写真タイトル, type: string, required: true }
+          - { name: date, label: 掲載日（新着順に使用）, type: date, required: true }
+          - name: category
+            label: カテゴリ
+            type: select
+            required: true
+            options:
+              values:
+                - { name: "1", label: カテゴリ1 }
+                - { name: "2", label: カテゴリ2 }
+                - { name: "3", label: カテゴリ3 }
+                - { name: "4", label: カテゴリ4 }
+                - { name: "5", label: カテゴリ5 }
+          - { name: original_image, label: 高画質の原寸写真, type: image, required: true, description: クリックして拡大したときに表示します }
+          - { name: thumbnail_image, label: 一覧用の軽い画像（任意）, type: image, description: 未指定の場合は原寸写真を一覧にも使います }
+          - { name: featured, label: 一番上のお気に入り写真にする, type: boolean, default: false }
+      - name: log_categories
+        label: ブログカテゴリ（上から1〜3）
+        type: object
+        list:
+          min: 3
+          max: 3
+          collapsible: { collapsed: true, summary: "{name}" }
+        fields:
+          - { name: name, label: カテゴリ名, type: string, required: true }
+      - name: log_posts
+        label: ブログ記事
+        type: object
+        list:
+          collapsible: { collapsed: true, summary: "{title} ({date})" }
+        fields:
+          - { name: title, label: 記事タイトル, type: string, required: true }
+          - { name: date, label: 公開日, type: date, required: true }
+          - name: category
+            label: カテゴリ
+            type: select
+            required: true
+            options:
+              values:
+                - { name: "1", label: カテゴリ1 }
+                - { name: "2", label: カテゴリ2 }
+                - { name: "3", label: カテゴリ3 }
+          - { name: image, label: 記事の写真（任意）, type: image }
+          - { name: body, label: 本文, type: text, required: true, description: 改行もそのまま記事に反映されます }
       - name: works
-        label: 写真・映像作品
+        label: 写真・動画作品
         type: object
         list:
           min: 1
-          collapsible:
-            collapsed: true
-            summary: "{title} ({index})"
+          collapsible: { collapsed: true, summary: "{title} ({index})" }
         fields:
           - { name: title, label: 作品名, type: string, required: true }
           - name: type
@@ -44,19 +102,13 @@ content:
             options:
               values:
                 - { name: photography, label: 写真 }
-                - { name: short film, label: 映像 }
+                - { name: short film, label: 動画 }
           - { name: note, label: 作品の説明, type: text }
           - { name: image, label: 写真・サムネイル, type: image, required: true }
-          - { name: youtube_url, label: YouTube URL, type: string, description: 映像作品の場合に貼り付けます }
-      - { name: film_title, label: 映像欄の見出し, type: text }
-      - { name: film_body, label: 映像欄の説明, type: text }
-      - { name: film_label, label: 映像の表示名, type: string }
-      - { name: film_youtube_url, label: メインのYouTube URL, type: string }
-      - { name: film_cover, label: 映像欄の背景写真, type: image }
+          - { name: youtube_url, label: YouTube URL, type: string, description: 動画作品に貼り付けます }
       - { name: about_title, label: 紹介欄の見出し, type: text }
       - { name: about_body, label: 紹介文, type: text }
       - { name: footer_tagline, label: 一番下の短い文章, type: string }
-
 actions:
   - name: publish-site
     label: 下書きを公開する
@@ -65,5 +117,5 @@ actions:
     cancelable: false
     confirm:
       title: サイトを公開しますか？
-      message: プレビューを確認したあとに実行してください。現在のホームページが下書きの内容に更新されます。
+      message: ホーム・写真・動画のプレビューを確認してから実行してください。
       button: 公開する
