@@ -36,3 +36,272 @@
 .reading{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .mast{grid-template-columns:1fr}.site-nav{justify-self:center}.journal,.about-page{max-width:900px;margin:auto;padding:70px 8vw 110px}.journal article{display:grid;grid-template-columns:150px 1fr;gap:0 30px;padding:34px 0;border-bottom:1px solid var(--line)}.journal time,.about-page dt{color:var(--orange);font:10px Arial,sans-serif;letter-spacing:.18em}.journal h2{margin:0;color:var(--indigo);font-weight:400}.journal p{grid-column:2;line-height:2}.about-page>p{font-size:18px;line-height:2.2}.about-page dl{display:grid;grid-template-columns:150px 1fr;margin-top:60px;border-top:1px solid var(--line)}.about-page dt,.about-page dd{margin:0;padding:22px 0;border-bottom:1px solid var(--line)}
 @media(max-width:760px){.mast{display:block;height:auto;padding:0;overflow-x:auto}.site-nav{display:flex;width:max-content;min-width:100%;gap:24px;padding:25px 20px}.hero{grid-template-columns:1fr;padding:44px 20px 48px}.hero-logo-link{width:88%;margin-top:22px}.hero-main{inset:0 12% 70px 0}.hero-sub{width:54%;height:145px}.journal,.about-page{padding:50px 20px 80px}.journal article{grid-template-columns:1fr}.journal h2{margin-top:12px}.journal p{grid-column:1}.about-page dl{grid-template-columns:110px 1fr}}
+
+/* 写真中心のページは4:3、MOVIEだけ16:9を維持する。 */
+.hero{
+  min-height:0;
+  align-items:start;
+}
+.hero-media{
+  min-height:0;
+  aspect-ratio:4/3;
+  align-self:start;
+}
+.hero-main{
+  inset:auto;
+  top:0;
+  left:0;
+  width:86%;
+  height:auto;
+  aspect-ratio:4/3;
+}
+.hero-sub{
+  height:auto;
+  aspect-ratio:4/3;
+}
+.card-media{
+  height:auto;
+  aspect-ratio:4/3;
+}
+.featured-image,
+.latest-grid article>div,
+.category-photo-grid a>div,
+.archive-photo-grid article>div,
+.work-image,
+.log-post-image{
+  min-height:0;
+  height:auto;
+  aspect-ratio:4/3;
+  object-fit:cover;
+}
+[data-page="films"] .work-image,
+[data-page="films"] .video{
+  aspect-ratio:16/9;
+}
+@media(max-width:760px){
+  .hero-media{
+    min-height:0;
+    aspect-ratio:4/3;
+  }
+  .hero-main{
+    inset:auto;
+    top:0;
+    left:0;
+    width:88%;
+  }
+  .hero-sub{
+    width:54%;
+    height:auto;
+  }
+}
+
+/* 写真と映像は作品本来の色をそのまま表示する。 */
+.hero-main,
+.hero-sub,
+.card-media,
+.work-image,
+.about-photo,
+.featured-image,
+.latest-grid article>div,
+.category-photo-grid a>div,
+.archive-photo-grid article>div,
+.log-post-image,
+.profile-photo{
+  filter:none;
+}
+.category-card:hover{
+  opacity:1;
+}
+.category-card:hover .card-media,
+.category-photo-grid a:hover>div{
+  filter:none;
+}
+
+/* 作品への入口に、色を変えない穏やかなホバー表現を加える。 */
+.category-card,
+.category-photo-grid a,
+.zoomable-photo{
+  will-change:transform;
+  transition:transform .6s cubic-bezier(.22,.61,.36,1);
+}
+.category-card .card-media,
+.category-photo-grid a>div{
+  transition:transform .8s cubic-bezier(.22,.61,.36,1);
+}
+.category-card h3,
+.category-photo-grid span{
+  position:relative;
+  width:max-content;
+  padding-bottom:7px;
+}
+.category-card h3::after,
+.category-photo-grid span::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:0;
+  width:100%;
+  height:1px;
+  background:var(--orange);
+  transform:scaleX(0);
+  transform-origin:left center;
+  transition:transform .55s cubic-bezier(.22,.61,.36,1);
+}
+@media(hover:hover){
+  .category-card:hover,
+  .category-card:focus-visible,
+  .category-photo-grid a:hover,
+  .category-photo-grid a:focus-visible{
+    transform:translateY(-5px);
+  }
+  .category-card:hover .card-media,
+  .category-card:focus-visible .card-media,
+  .category-photo-grid a:hover>div,
+  .category-photo-grid a:focus-visible>div{
+    transform:scale(1.025);
+  }
+  .zoomable-photo:hover,
+  .zoomable-photo:focus-visible{
+    transform:translateY(-3px) scale(1.018);
+  }
+  .category-card:hover h3::after,
+  .category-card:focus-visible h3::after,
+  .category-photo-grid a:hover span::after,
+  .category-photo-grid a:focus-visible span::after{
+    transform:scaleX(1);
+  }
+}
+@media(hover:none){
+  .category-card:active,
+  .category-photo-grid a:active{
+    transform:translateY(-3px);
+  }
+  .category-card:active .card-media,
+  .category-photo-grid a:active>div{
+    transform:scale(1.018);
+  }
+  .zoomable-photo:active{
+    transform:translateY(-2px) scale(1.012);
+  }
+  .category-card:active h3::after,
+  .category-photo-grid a:active span::after{
+    transform:scaleX(1);
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  .category-card,
+  .category-photo-grid a,
+  .zoomable-photo,
+  .category-card .card-media,
+  .category-photo-grid a>div,
+  .category-card h3::after,
+  .category-photo-grid span::after{
+    transition:none;
+  }
+  .category-card:hover,
+  .category-card:focus-visible,
+  .category-card:active,
+  .category-photo-grid a:hover,
+  .category-photo-grid a:focus-visible,
+  .category-photo-grid a:active,
+  .zoomable-photo:hover,
+  .zoomable-photo:focus-visible,
+  .zoomable-photo:active,
+  .category-card:hover .card-media,
+  .category-card:focus-visible .card-media,
+  .category-card:active .card-media,
+  .category-photo-grid a:hover>div,
+  .category-photo-grid a:focus-visible>div,
+  .category-photo-grid a:active>div{
+    transform:none;
+  }
+}
+
+/* ABOUT・MORE・CONTACTの矢印を、同じ動きと色変化に揃える。 */
+.about-link b,
+.more-link b,
+.about-contact-link b{
+  color:inherit;
+  transition:transform .22s ease,color .16s ease;
+}
+@media(hover:hover){
+  .about-link:hover b,
+  .about-link:focus-visible b,
+  .more-link:hover b,
+  .more-link:focus-visible b,
+  .about-contact-link:hover b,
+  .about-contact-link:focus-visible b{
+    color:var(--orange);
+    transform:translateX(6px);
+    transition-delay:0s,.12s;
+  }
+}
+@media(hover:none){
+  .about-link:active b,
+  .more-link:active b,
+  .about-contact-link:active b{
+    color:var(--orange);
+    transform:translateX(6px);
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  .about-link:hover b,
+  .about-link:focus-visible b,
+  .about-link:active b,
+  .more-link:hover b,
+  .more-link:focus-visible b,
+  .more-link:active b,
+  .about-contact-link:hover b,
+  .about-contact-link:focus-visible b,
+  .about-contact-link:active b{
+    transform:none;
+    transition:none;
+  }
+}
+
+/* カテゴリ名の下を、短い線が左から右へ走り抜ける。 */
+.category-card h3,
+.category-photo-grid span{
+  overflow:hidden;
+}
+.category-card h3::after,
+.category-photo-grid span::after{
+  left:-58%;
+  width:52%;
+  opacity:0;
+  transform:none;
+  transition:none;
+}
+@keyframes category-line-sweep{
+  0%{left:-58%;opacity:0}
+  14%{opacity:1}
+  72%{opacity:1}
+  100%{left:108%;opacity:0}
+}
+@media(hover:hover){
+  .category-card:hover h3::after,
+  .category-card:focus-visible h3::after,
+  .category-photo-grid a:hover span::after,
+  .category-photo-grid a:focus-visible span::after{
+    transform:none;
+    animation:category-line-sweep .9s cubic-bezier(.22,.61,.36,1) both;
+  }
+}
+@media(hover:none){
+  .category-card:active h3::after,
+  .category-photo-grid a:active span::after{
+    transform:none;
+    animation:category-line-sweep .72s cubic-bezier(.22,.61,.36,1) both;
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  .category-card:hover h3::after,
+  .category-card:focus-visible h3::after,
+  .category-card:active h3::after,
+  .category-photo-grid a:hover span::after,
+  .category-photo-grid a:focus-visible span::after,
+  .category-photo-grid a:active span::after{
+    animation:none;
+    opacity:0;
+  }
+}

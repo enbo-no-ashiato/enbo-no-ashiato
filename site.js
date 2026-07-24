@@ -3,6 +3,17 @@ const source=preview?"content/draft.json":"content/site.json";
 const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const br=v=>esc(v).replace(/\n/g,"<br>");
 const yt=v=>{try{const u=new URL(v);if(u.hostname.includes("youtu.be"))return u.pathname.slice(1).split("/")[0];if(u.hostname.includes("youtube.com"))return u.searchParams.get("v")||u.pathname.split("/").filter(Boolean).pop()}catch(_){}return""};
+const isMp4=v=>/\.mp4(?:$|[?#])/i.test(String(v??""));
+const mediaMarkup=(value,className)=>isMp4(value)
+  ?`<div class="${className} media-video" style="overflow:hidden"><video src="${esc(value)}" autoplay muted loop playsinline preload="metadata" aria-hidden="true" style="display:block;width:100%;height:100%;object-fit:cover"></video></div>`
+  :`<div class="${className}" style="background-image:url('${esc(value)}')"></div>`;
+
+function setHomeMedia(element,value){
+  element.style.backgroundImage="";
+  element.innerHTML="";
+  if(isMp4(value)){element.style.overflow="hidden";element.innerHTML=`<video src="${esc(value)}" autoplay muted loop playsinline preload="metadata" aria-hidden="true" style="display:block;width:100%;height:100%;object-fit:cover"></video>`;}
+  else element.style.backgroundImage=`url('${esc(value)}')`;
+}
 
 if(preview){
   document.getElementById("previewBadge").hidden=false;
@@ -25,8 +36,8 @@ function renderHome(d){
   q("title").textContent=d.title;
   q("reading").textContent=d.reading;
   q("tagline").textContent="旅、写真、記録。";
-  q("heroMain").style.backgroundImage=`url('${esc(d.hero_image)}')`;
-  q("heroSub").style.backgroundImage=`url('${esc(d.hero_sub_image)}')`;
+  setHomeMedia(q("heroMain"),d.hero_image);
+  setHomeMedia(q("heroSub"),d.hero_sub_image);
   q("feature").textContent=d.feature_caption;
   q("aboutTitle").innerHTML="まだ見ぬ遠くの風景を、<br>自分の目と心で見に行きたい。";
   q("aboutBody").innerHTML="「遠望の足跡」は日常と旅の記録。<br>自分の感性を静かに積み重ねていく個人サイトです。";
@@ -39,9 +50,9 @@ function renderHome(d){
   const movie=d.home_movie_image||works.find(w=>String(w.type).toLowerCase().includes("film"))?.image||d.hero_sub_image;
   const log=d.home_log_image||d.hero_sub_image;
   q("cards").innerHTML=`
-    <a class="card category-card local" href="gallery.html"><div class="card-media" style="background-image:url('${esc(photo)}')"></div><h3>PHOTOGRAPHY</h3><em>光と風景の記録</em><p>旅先や日常で出会った、一瞬の気配を切り取りました。</p></a>
-    <a class="card category-card local" href="films.html"><div class="card-media" style="background-image:url('${esc(movie)}')"></div><h3>MOVIE</h3><em>時間と音の記録</em><p>過ぎゆく時間を、映像という形で残します。</p></a>
-    <a class="card category-card local" href="log.html"><div class="card-media" style="background-image:url('${esc(log)}')"></div><h3>LOG</h3><em>言葉と記憶の記録</em><p>旅の途中で考えたことや、日々の小さな発見を書き留めます。</p></a>`;
+    <a class="card category-card local" href="gallery.html">${mediaMarkup(photo,"card-media")}<h3>PHOTOGRAPHY</h3><em>光と風景の記録</em><p>旅先や日常で出会った、一瞬の気配を切り取りました。</p></a>
+    <a class="card category-card local" href="films.html">${mediaMarkup(movie,"card-media")}<h3>MOVIE</h3><em>時間と音の記録</em><p>過ぎゆく時間を、映像という形で残します。</p></a>
+    <a class="card category-card local" href="log.html">${mediaMarkup(log,"card-media")}<h3>LOG</h3><em>言葉と記憶の記録</em><p>旅の途中で考えたことや、日々の小さな発見を書き留めます。</p></a>`;
 }
 
 function renderAbout(d){

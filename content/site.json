@@ -4,41 +4,126 @@
   "logo": "media/logo.png",
   "tagline": "旅、写真、記録。\n遠くを見つめながら残していく、\n小さな足跡。",
   "feature_caption": "光の気配をたどる、夏の途上にて。",
-  "hero_image": "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1800&q=90",
-  "hero_sub_image": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1000&q=88",
-  "home_photography_image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=88",
-  "home_movie_image": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1200&q=88",
-  "home_log_image": "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1200&q=88",
-  "about_image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=88",
+  "hero_image": "media/ZFC_3869-cropped-0a06ac98.jpg",
+  "hero_sub_image": "media/ZFC_1122-cropped-563acf41.jpg",
+  "home_photography_image": "media/ZFC_2245-cropped-feb4e834.jpg",
+  "home_movie_image": "media/MOVIE-12bc7a1c.mp4",
+  "home_log_image": "media/1-bc1faa51.png",
+  "about_image": "media/ZFC_1417-cropped-0303453b.jpg",
   "photo_categories": [
-    {"name":"カテゴリ1","cover_image":"https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=86"},
-    {"name":"カテゴリ2","cover_image":"https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=800&q=86"},
-    {"name":"カテゴリ3","cover_image":"https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=800&q=86"},
-    {"name":"カテゴリ4","cover_image":"https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=800&q=86"},
-    {"name":"カテゴリ5","cover_image":"https://images.unsplash.com/photo-1470770903676-69b98201ea1c?auto=format&fit=crop&w=800&q=86"}
+    {
+      "name": "カテゴリ1",
+      "cover_image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=86"
+    },
+    {
+      "name": "カテゴリ2",
+      "cover_image": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=800&q=86"
+    },
+    {
+      "name": "カテゴリ3",
+      "cover_image": "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=800&q=86"
+    },
+    {
+      "name": "カテゴリ4",
+      "cover_image": "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=800&q=86"
+    },
+    {
+      "name": "カテゴリ5",
+      "cover_image": "https://images.unsplash.com/photo-1470770903676-69b98201ea1c?auto=format&fit=crop&w=800&q=86"
+    }
   ],
   "photos": [
-    {"title":"遠景、光の記憶","date":"2026-07-20","category":"3","original_image":"https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=2400&q=95","thumbnail_image":"https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1400&q=86","featured":true},
-    {"title":"風の通り道","date":"2026-07-19","category":"1","original_image":"https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2400&q=95","thumbnail_image":"https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=86","featured":false},
-    {"title":"森に残る光","date":"2026-07-18","category":"2","original_image":"https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=2400&q=95","thumbnail_image":"https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1200&q=86","featured":false},
-    {"title":"湖畔の静寂","date":"2026-07-17","category":"4","original_image":"https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=2400&q=95","thumbnail_image":"https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1200&q=86","featured":false},
-    {"title":"朝霧の向こう","date":"2026-07-16","category":"5","original_image":"https://images.unsplash.com/photo-1470770903676-69b98201ea1c?auto=format&fit=crop&w=2400&q=95","thumbnail_image":"https://images.unsplash.com/photo-1470770903676-69b98201ea1c?auto=format&fit=crop&w=1200&q=86","featured":false},
-    {"title":"山の記憶","date":"2026-07-15","category":"3","original_image":"https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=2400&q=95","thumbnail_image":"https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=86","featured":false}
+    {
+      "title": "遠景、光の記憶",
+      "date": "2026-07-20",
+      "category": "3",
+      "original_image": "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=2400&q=95",
+      "thumbnail_image": "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1400&q=86",
+      "featured": true
+    },
+    {
+      "title": "風の通り道",
+      "date": "2026-07-19",
+      "category": "1",
+      "original_image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2400&q=95",
+      "thumbnail_image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=86",
+      "featured": false
+    },
+    {
+      "title": "森に残る光",
+      "date": "2026-07-18",
+      "category": "2",
+      "original_image": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=2400&q=95",
+      "thumbnail_image": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1200&q=86",
+      "featured": false
+    },
+    {
+      "title": "湖畔の静寂",
+      "date": "2026-07-17",
+      "category": "4",
+      "original_image": "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=2400&q=95",
+      "thumbnail_image": "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1200&q=86",
+      "featured": false
+    },
+    {
+      "title": "朝霧の向こう",
+      "date": "2026-07-16",
+      "category": "5",
+      "original_image": "https://images.unsplash.com/photo-1470770903676-69b98201ea1c?auto=format&fit=crop&w=2400&q=95",
+      "thumbnail_image": "https://images.unsplash.com/photo-1470770903676-69b98201ea1c?auto=format&fit=crop&w=1200&q=86",
+      "featured": false
+    },
+    {
+      "title": "山の記憶",
+      "date": "2026-07-15",
+      "category": "3",
+      "original_image": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=2400&q=95",
+      "thumbnail_image": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=86",
+      "featured": false
+    }
   ],
   "log_categories": [
-    {"name":"日々の記録"},
-    {"name":"旅の記録"},
-    {"name":"制作ノート"}
+    {
+      "name": "日々の記録"
+    },
+    {
+      "name": "旅の記録"
+    },
+    {
+      "name": "その他の記録"
+    }
   ],
   "log_posts": [
-    {"title":"遠くを見るための場所","date":"2026-07-17","category":"1","body":"この場所を、写真と映像、その前後にある言葉を静かに残せる棚にしていきます。","image":""},
-    {"title":"雨上がりの光","date":"2026-06-28","category":"2","body":"濡れた道の色は、晴れた日の景色よりも少しだけ記憶に長く残る気がします。","image":""},
-    {"title":"サイトをつくるということ","date":"2026-05-12","category":"3","body":"少しずつ手を加えながら、自分の感性が残る場所を育てています。","image":""}
+    {
+      "title": "遠望の足跡のサイト完成",
+      "date": "2026-07-22",
+      "category": "1",
+      "body": "ルカとノアのおかげで“遠謀の足跡”のサイトが完成した。\nコンテンツを少しずつ充実させて、ゆっくり育てていこう。",
+      "image": ""
+    }
   ],
   "works": [
-    {"title":"裸足の軌跡","type":"photography","note":"土の温度、草の感触。旅先で足もとに残った記憶。","image":"https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=88","youtube_url":""},
-    {"title":"Opening","type":"short film","note":"","image":"https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1200&q=88","youtube_url":"https://youtu.be/A0maVY8J4X0"},
-    {"title":"遠景、雨のあと","type":"photography","note":"雨上がりの道で見つけた、淡い光の記録。","image":"https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1400&q=88","youtube_url":""}
+    {
+      "title": "裸足の軌跡",
+      "type": "photography",
+      "note": "土の温度、草の感触。旅先で足もとに残った記憶。",
+      "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=88",
+      "youtube_url": ""
+    },
+    {
+      "title": "Opening",
+      "type": "short film",
+      "note": "",
+      "image": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1200&q=88",
+      "youtube_url": "https://youtu.be/A0maVY8J4X0"
+    },
+    {
+      "title": "遠景、雨のあと",
+      "type": "photography",
+      "note": "雨上がりの道で見つけた、淡い光の記録。",
+      "image": "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1400&q=88",
+      "youtube_url": ""
+    }
   ],
   "about_title": "遠くの景色と、\n歩いてきた道。",
   "about_body": "「遠望の足跡」は、旅の記録、写真、動画、そして日々の感性を静かに積み重ねていく個人サイトです。遠くの景色に惹かれながら、自分の歩いてきた道もまた残していきたい。",
