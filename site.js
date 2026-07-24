@@ -35,7 +35,18 @@ function renderHome(d){
   document.title=`${d.title}｜旅、写真、記録。`;
   q("title").textContent=d.title;
   q("reading").textContent=d.reading;
-  q("tagline").textContent="旅、写真、記録。";
+  const tagline=q("tagline");
+  const taglineMode=d.tagline_mode||"text";
+  const taglineMedia=d.tagline_media||"";
+  if(taglineMode==="media"&&taglineMedia){
+    tagline.classList.add("tagline-has-media");
+    tagline.innerHTML=isMp4(taglineMedia)
+      ?`<video src="${esc(taglineMedia)}" autoplay muted loop playsinline preload="metadata" aria-label="トップページのキャッチコピー映像"></video>`
+      :`<img src="${esc(taglineMedia)}" alt="トップページのキャッチコピー">`;
+  }else{
+    tagline.classList.remove("tagline-has-media");
+    tagline.textContent=d.tagline||"旅、写真、記録。";
+  }
   setHomeMedia(q("heroMain"),d.hero_image);
   setHomeMedia(q("heroSub"),d.hero_sub_image);
   q("feature").textContent=d.feature_caption;

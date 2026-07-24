@@ -217,6 +217,68 @@
   }
 }
 
+/* トップ上部は画面幅に引っ張られすぎない基準幅で整える。 */
+.hero{
+  width:min(1380px,100%);
+  margin-inline:auto;
+  grid-template-columns:440px minmax(0,760px);
+  justify-content:center;
+  gap:clamp(44px,5vw,78px);
+  padding:62px 40px 54px;
+}
+.hero-copy{
+  min-width:0;
+}
+.hero-logo-link{
+  width:440px;
+  max-width:100%;
+}
+.tagline{
+  min-height:0;
+  margin-top:32px;
+  font-size:14px;
+  line-height:2.1;
+  letter-spacing:.06em;
+  white-space:pre-line;
+}
+.tagline::after{
+  content:none;
+}
+.tagline.tagline-has-media{
+  width:min(360px,100%);
+  line-height:0;
+}
+.tagline.tagline-has-media img,
+.tagline.tagline-has-media video{
+  display:block;
+  width:auto;
+  max-width:100%;
+  height:auto;
+  max-height:120px;
+  object-fit:contain;
+  object-position:left center;
+}
+@media(max-width:900px){
+  .hero{
+    width:auto;
+    grid-template-columns:1fr;
+    gap:38px;
+    padding:48px 20px 44px;
+  }
+  .hero-copy{
+    width:100%;
+  }
+  .hero-logo-link{
+    width:min(440px,88vw);
+  }
+  .tagline{
+    margin-top:26px;
+  }
+  .tagline.tagline-has-media{
+    width:min(360px,88vw);
+  }
+}
+
 /* ABOUT・MORE・CONTACTの矢印を、同じ動きと色変化に揃える。 */
 .about-link b,
 .more-link b,
